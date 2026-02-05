@@ -5,55 +5,143 @@
   <title>Infographic và Video</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #e0e7ff 0%, #f9fafb 100%);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+      color: #fff;
+      padding: 32px 0 16px 0;
       text-align: center;
-      background-color: #f9f9f9;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 32px;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 24px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(60,80,180,0.08);
     }
-    img {
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .profile-info {
+      background: #f1f5ff;
+      border-radius: 12px;
+      padding: 18px 32px;
+      min-width: 260px;
+      box-shadow: 0 2px 8px rgba(60,80,180,0.06);
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .product-card {
+      background: #f8fafc;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(60,80,180,0.07);
+      padding: 20px 18px 28px 18px;
+      max-width: 290px;
+      flex: 1 1 260px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(60,80,180,0.13);
+    }
+    .product-card h3 {
+      color: #2563eb;
+      margin-top: 0;
+    }
+    .product-card p {
+      color: #374151;
+      font-size: 15px;
+      min-height: 48px;
+    }
+    .product-card img, .product-card embed, .product-card iframe {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(60,80,180,0.07);
+    }
+    .product-card embed {
+      width: 100%;
+      height: 220px;
+      border: none;
+    }
+    .product-card img {
       max-width: 100%;
       height: auto;
-      margin-bottom: 20px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
+      border: 2px solid #dbeafe;
     }
-    iframe {
+    .product-card iframe {
       width: 100%;
-      height: 450px;
+      height: 180px;
       border: none;
-      border-radius: 8px;
+    }
+    @media (max-width: 900px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+      .container {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>TRANG GIỚI THIỆU CÁ NHÂN</h1>
+    <p style="font-size:18px; font-weight:400; margin-top:8px;">Lab 05 - Công nghệ số trong giáo dục</p>
+  </header>
   <div class="container">
-    <h1 style="color:#2d6cdf; margin-bottom: 0;">Giới thiệu cá nhân</h1>
-    <div style="background:#e3eefd; border-radius:10px; padding:16px; margin-bottom:24px;">
-      <p><strong>Họ tên:</strong> Nguyễn Văn A</p>
-      <p><strong>MSSV:</strong> 12345678</p>
-      <p><strong>Lớp:</strong> CT005H</p>
-      <p><strong>Email:</strong> nguyenvana@example.com</p>
+    <div class="profile">
+      <div class="profile-info">
+        <h2 style="color:#2563eb; margin-top:0;">Nguyễn Văn A</h2>
+        <p><strong>MSSV:</strong> 12345678</p>
+        <p><strong>Lớp:</strong> CT005H</p>
+        <p><strong>Email:</strong> nguyenvana@example.com</p>
+      </div>
     </div>
-    <hr>
-    <h2 style="color:#1a4d8f;">Các sản phẩm đã tạo</h2>
-    <h3>1. File PDF: Báo cáo Infographic</h3>
-    <p>File PDF trình bày nội dung về lợi ích của công nghệ số trong giáo dục.</p>
-    <embed src="Lab05_Ex1.2.pdf" type="application/pdf" width="100%" height="500px" />
-    <h3>2. Hình ảnh PNG: Infographic</h3>
-    <p>Hình ảnh minh họa trực quan về chủ đề công nghệ số trong giáo dục.</p>
-    <img src="Lab05_Ex2.1.png.png" alt="Infographic về lợi ích công nghệ số trong giáo dục">
-    <h3>3. Video YouTube: Thuyết trình</h3>
-    <p>Video thuyết trình về chủ đề đã chọn, trình bày các nội dung chính và minh họa sinh động.</p>
-    <iframe 
-      src="https://www.youtube.com/embed/sKE41Yl2LNY" 
-      title="YouTube video player" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+    <h2 style="color:#1a4d8f; text-align:center;">Các sản phẩm tiêu biểu</h2>
+    <div class="products">
+      <div class="product-card">
+        <h3>1. Báo cáo Infographic (PDF)</h3>
+        <p>File PDF trình bày nội dung về lợi ích của công nghệ số trong giáo dục.</p>
+        <embed src="Lab05_Ex1.2.pdf" type="application/pdf" />
+      </div>
+      <div class="product-card">
+        <h3>2. Infographic (PNG)</h3>
+        <p>Hình ảnh minh họa trực quan về chủ đề công nghệ số trong giáo dục.</p>
+        <img src="Lab05_Ex2.1.png.png" alt="Infographic về lợi ích công nghệ số trong giáo dục">
+      </div>
+      <div class="product-card">
+        <h3>3. Video thuyết trình (YouTube)</h3>
+        <p>Video thuyết trình về chủ đề đã chọn, trình bày các nội dung chính và minh họa sinh động.</p>
+        <iframe 
+          src="https://www.youtube.com/embed/sKE41Yl2LNY" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   </div>
 </body>
 </html>
